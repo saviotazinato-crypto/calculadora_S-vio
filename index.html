@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #calculadora_em_si {
+
+            height: 500px;
+            width: 283px;
+            background-color: aqua;
+        }
+
+        #display {
+            margin-top: 10px;
+            margin-left: 13.5px;
+            height: 25px;
+            width: 90%;
+            background-color: green;
+        }
+
+        button {
+            height: 73px;
+            width: 73px;
+            margin-left: 13.5px;
+        }
+    </style>
+    <div id="calculadora_em_si">
+        <div id="display">0</div>
+        <button type="button" id="1" onclick="escreverNodisplay('1')">1</button>
+        <button type="button" id="2" onclick="escreverNodisplay('2')">2</button>
+        <button type="button" id="3" onclick="escreverNodisplay('3')">3</button>
+        <button type="button" id="4" onclick="escreverNodisplay('4')">4</button>
+        <button type="button" id="5" onclick="escreverNodisplay('5')">5</button>
+        <button type="button" id="6" onclick="escreverNodisplay('6')">6</button>
+        <button type="button" id="7" onclick="escreverNodisplay('7')">7</button>
+        <button type="button" id="8" onclick="escreverNodisplay('8')">8</button>
+        <button type="button" id="9" onclick="escreverNodisplay('9')">9</button>
+        <button type="button" id="-" onclick="escreverNodisplay('0')">0</button>
+        <button type="button" id="*" onclick="escreverNodisplay('*')">*</button>
+        <button type="button" id="/" onclick="escreverNodisplay('/')">/</button>
+        <button type="button" id="+" onclick="escreverNodisplay('+')"">+</button>
+     <button type =" button" id="-" onclick="escreverNodisplay('-')">-</button>
+        <button type="button" id="skibidi" onclick="escreverNodisplay('**')">^</button>
+        <button type="button" id='<-' onclick="apagar1('')"><-< /button>
+                <button type="button" id="skibidi" onclick="apagartudo()">C</button>
+                <button type="button" id="-" onclick="resultado()">=</button>
+    </div>
+    <script>
+        var dysplay = ""
+        var btntexts = ""
+        function escreverNodisplay(n) {
+
+            document.getElementById("display").innerText = dysplay + n;
+            dysplay = document.getElementById("display").innerText;
+        }
+        function resultado() {
+            dysplay = eval(dysplay);
+
+            document.getElementById("display").innerText = dysplay
+
+
+        }
+        function apagar1(n) {
+            dysplay = dysplay.slice(0, -1);
+            document.getElementById("display").innerText = dysplay;
+            dysplay = document.getElementById("display").innerText;
+        }
+        function apagartudo() {
+            dysplay = "   "
+            document.getElementById("display").innerText = dysplay;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
