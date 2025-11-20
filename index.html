@@ -37,6 +37,7 @@
             margin-left: 13.5px;
         }
     </style>
+    <audio src="blip-131856.mp3" id="clickSound"></audio>
     <div id="calculadora_em_si">
         <div id="display">0</div>
         <button type="button" id="1" onclick="escreverNodisplay('1')">1</button>
@@ -51,10 +52,10 @@
         <button type="button" id="-" onclick="escreverNodisplay('0')">0</button>
         <button type="button" id="*" onclick="escreverNodisplay('*')">*</button>
         <button type="button" id="/" onclick="escreverNodisplay('/')">/</button>
-        <button type="button" id="+" onclick="escreverNodisplay('+')"">+</button>
-     <button type =" button" id="-" onclick="escreverNodisplay('-')">-</button>
+        <button type="button" id="+" onclick="escreverNodisplay('+')">+</button>
+     <button type =" button" id="-" onclick="escreverNodisplay('-')"> - </button>
         <button type="button" id="skibidi" onclick="escreverNodisplay('**')">^</button>
-        <button type="button" id='<-' onclick="apagar1('')"> <- </button>
+        <button type="button" id='<-' onclick="apagar1()"><- </button>
                 <button type="button" id="skibidi" onclick="apagartudo()">C</button>
                 <button type="button" id="-" onclick="resultado()">=</button>
     </div>
@@ -62,11 +63,12 @@
         var dysplay = ""
         var btntexts = ""
         function escreverNodisplay(n) {
-
+document.getElementById('clickSound').play();
             document.getElementById("display").innerText = dysplay + n;
             dysplay = document.getElementById("display").innerText;
         }
         function resultado() {
+            document.getElementById('clickSound').play();
             dysplay = eval(dysplay);
 
             document.getElementById("display").innerText = dysplay
@@ -74,11 +76,13 @@
 
         }
         function apagar1(n) {
+            document.getElementById('clickSound').play();
             dysplay = dysplay.slice(0, -1);
             document.getElementById("display").innerText = dysplay;
             dysplay = document.getElementById("display").innerText;
         }
         function apagartudo() {
+            document.getElementById('clickSound').play();
             dysplay = "   "
             document.getElementById("display").innerText = dysplay;
         }
@@ -89,6 +93,5 @@
     </script>
 
 </body>
-
 
 </html>
